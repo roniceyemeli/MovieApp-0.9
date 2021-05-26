@@ -3,6 +3,7 @@ import "./MovieCard.css";
 import ReactStars from "react-rating-stars-component";
 
 import { Button, Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const MovieCard = ({ movie }) => {
   return (
@@ -20,7 +21,7 @@ const MovieCard = ({ movie }) => {
               activeColor="#ffd700"
             />
           </>
-          <Button variant="primary">Watch this movie</Button>
+          <Link to={`/${movie.id}`}><Button variant="primary">See trailer and description</Button></Link>
         </Card.Body>
       </Card>
     </div>
