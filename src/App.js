@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
 import "./App.css";
-import { BrowserRouter as Router, Route, } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import AddMovie from "./components/addmovie/AddMovie";
 import Filter from "./components/filter/Filter";
 import MovieList from "./components/movielist/MovieList";
@@ -25,22 +25,35 @@ function App() {
   return (
     <div>
       <Router>
-      <Filter
-        handleChange={handleChange}
-        title={title}
-        ratingChanged={ratingChanged}
-        rate={rate}
-      />
-     
-     <Route path="/" exact render={()=> <MovieList
-        movielist={movielist.filter(
-          (movie) =>
-            movie.title.toUpperCase().includes(title.toUpperCase()) &&
-            movie.rate >= rate
-        )}
-      />}/>
-      <Route path="/:id" exact render={(props)=><DescriptionTrailer {...props} movielist={movielist}/>}/>
-      <AddMovie handleAdd={handleAdd} />
+        <Filter
+          handleChange={handleChange}
+          title={title}
+          ratingChanged={ratingChanged}
+          rate={rate}
+        />
+
+
+        <Route
+          path="/"
+          exact
+          render={() => (
+            <MovieList
+              movielist={movielist.filter(
+                (movie) =>
+                  movie.title.toUpperCase().includes(title.toUpperCase()) &&
+                  movie.rate >= rate
+              )}
+            />
+          )}
+        />
+        <Route
+          path="/:id"
+          exact
+          render={(props) => (
+            <DescriptionTrailer {...props} movielist={movielist} />
+          )}
+        />
+        <AddMovie handleAdd={handleAdd} />
       </Router>
     </div>
   );

@@ -13,7 +13,7 @@ const Filter = ({handleChange, title, ratingChanged, rate}) => {
         href="#home"
         style={{ marginLeft: "3em", color: "red", fontSize: "3em" }}
       >
-        Movieclub<sup style={{ fontSize: "40%", padding: "2%" }}>Gomycode</sup>{" "}
+        Movieclub<sup style={{ fontSize: "20%", padding: "2%" }}>mc</sup>{" "}
       </Navbar.Brand>
       <Form inline style={{ marginLeft: "50%" }}>
         <FormControl
